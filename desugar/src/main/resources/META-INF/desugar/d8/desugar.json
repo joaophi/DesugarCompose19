@@ -1,0 +1,39 @@
+{
+  "configuration_format_version": 3,
+  "group_id": "com.tools.android",
+  "artifact_id": "desugar_jdk_libs",
+  "version": "1.1.1",
+  "required_compilation_api_level": 21,
+  "synthesized_library_classes_package_prefix": "a$.",
+  "support_all_callbacks_from_library": true,
+  "common_flags": [],
+  "library_flags": [
+    {
+      "api_level_below_or_equal": 20,
+      "rewrite_prefix": {},
+      "retarget_lib_member": {},
+      "dont_rewrite": [],
+      "emulate_interface": {},
+      "custom_conversion": {}
+    }
+  ],
+  "program_flags": [
+    {
+      "api_level_below_or_equal": 20,
+      "rewrite_prefix": {
+        "android.view.ViewOutlineProvider": "a$.view.ViewOutlineProvider",
+        "android.graphics.Outline": "a$.graphics.Outline",
+        "android.util.Desugar": "a$.util.Desugar"
+      },
+      "retarget_lib_member": {
+        "android.view.View#setElevation": "android.util.DesugarView",
+        "android.view.View#getClipToOutline": "android.util.DesugarView",
+        "android.view.View#setClipToOutline": "android.util.DesugarView"
+      },
+      "dont_rewrite": [],
+      "emulate_interface": {},
+      "custom_conversion": {}
+    }
+  ],
+  "shrinker_config": []
+}
